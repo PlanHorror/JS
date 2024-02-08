@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <button onclick = "
+            {
+                cost += 4;
+                console.log(cost);
+            }">
+            +4
+        </button>
+        <button onclick = "
+        {
+            cost +=5
+            console.log(cost);
+        }">
+            +5
+        </button >
+        <button onclick = "
+        {
+            cost --;
+            cost --;
+            console.log(cost);
+        }">
+            -2
+        </button>
+        <button onclick = "{
+            cost -= 3;
+            console.log(cost);
+        }">
+            -3
+        </button>
+
+       <script>
+            let name = "John";
+            console.log(`My name is ${name}`)
+            let cost = 5+2*3+9;
+            console.log(`Cost of food: ${cost}`);
+            let xtax = 0.1;
+            let tax = xtax*cost;
+            console.log(`Tax: $${tax}`);
+            let totalCost = cost+tax;
+            console.log(totalCost)
+       </script> 
+    </body>
+</html>
