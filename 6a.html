@@ -5,11 +5,12 @@
     </head>
     <body>
         <script>
+            let name = 'HOWTF'
             let hour = 22;
             if (hour < 0 && hour > 23 ){
                 alert('No hour')
             }
-            (hour <= 12) ? alert('Good morning'):((12 < hour && hour <= 17) ? alert('Good afternoon') : alert('Good evening'))  
+            (hour <= 12) ? alert(`Good morning ${name}`):((12 < hour && hour <= 17) ? alert(`Good afternoon ${name}`) : alert(`Good evening ${name}`))  
             
             
         </script>
