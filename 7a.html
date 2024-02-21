@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            convertTemperature(86,'F')
+            function convertToFahrenheit(Celsius){
+                Fahrenheit = (Celsius * 9/5) + 32 
+                return Fahrenheit
+            }
+            function convertToCelsius(Fahrenheit){
+                Celcius = (Fahrenheit - 32) * 5/9
+                return Celcius
+            }
+            function convertTemperature(degree,unit){
+                unit == 'C' ? console.log(convertToFahrenheit(degree) + 'F') : console.log(convertToCelsius(degree) + 'C')
+            }
+            function greet(){
+                let name
+                (name == undefined) ? console.log('Hi there!') : console.log(`Hello! ${name}`)
+            }
+        </script>
+    </body>
+</html>
