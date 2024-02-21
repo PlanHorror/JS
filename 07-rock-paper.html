@@ -9,31 +9,43 @@
         </p>
         <button onclick="{
             pickcomputerMove();
-            let userMove = 'rock';
-            (computerMove == 'rock') ? result = 'Tie' : ((computerMove == 'paper') ? result = 'Lose' : result = 'Win');
-            alert(`Computer choose ${computerMove}. You choose ${userMove}. You ${result}`)
+            playerMove('rock');
+            
         }">
             rock
         </button>
         <button onclick="{
             pickcomputerMove();
-            let userMove = 'paper';
-            (computerMove == 'rock') ? result = 'Win' : ((computerMove == 'paper') ? result = 'Tie' : result = 'Lose');
-            alert(`Computer choose ${computerMove}. You choose ${userMove}. You ${result}`)
+            userMove('paper');
+            
         }">
             paper
         </button>
         <button onclick="{
             pickcomputerMove();
-            let userMove = 'scissors';
-            (computerMove == 'rock') ? result = 'Lose' : ((computerMove == 'paper') ? result = 'Win' : result = 'Tie');
-            alert(`Computer choose ${computerMove}. You choose ${userMove}. You ${result}`)
+            userMove('scissors');
+            
         }">
             scissors
         </button>
         <script>
             let computerMove =''
             let result = ''
+            let userMove = ''
+            function playerMove(userMove){
+                if (userMove == 'rock'){
+                    (computerMove == 'rock') ? result = 'Tie' : ((computerMove == 'paper') ? result = 'Lose' : result = 'Win');
+                    alert(`Computer choose ${computerMove}. You choose ${userMove}. You ${result}`);
+                }
+                else if (userMove == 'paper'){
+                    (computerMove == 'rock') ? result = 'Win' : ((computerMove == 'paper') ? result = 'Tie' : result = 'Lose');
+                    alert(`Computer choose ${computerMove}. You choose ${userMove}. You ${result}`)
+                }
+                else if (userMove == 'scissors'){
+                    (computerMove == 'rock') ? result = 'Lose' : ((computerMove == 'paper') ? result = 'Win' : result = 'Tie');
+                alert(`Computer choose ${computerMove}. You choose ${userMove}. You ${result}`)
+                }
+            };
             function pickcomputerMove(){
                 let computerRandom = Math.random();
                 (computerRandom < 1/3 && computerRandom >= 0) ? computerMove = 'rock' : ((computerRandom >= 1/3 && computerRandom < 2/3) ? computerMove = 'paper' : ((computerRandom >= 2/3) && (computerMove = 'scissors')));
