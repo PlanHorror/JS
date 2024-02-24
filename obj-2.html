@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            console.log('hi there'.length)
+            console.log('AtnmA'.toUpperCase())
+            const obj1 = {
+                name : 'Nope',
+                price : 299,
+            }
+            let {name, price} = obj1;
+            console.log(name + ' ' + price)
+            const obj2 = {
+                name,
+                price,
+                test(){
+                    console.log(obj2)
+                }
+            }
+            obj2.test()
+        </script>
+    </body>
+</html>
