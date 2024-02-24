@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            let basketball = {
+                name : 'basketball',
+                price : 2095,
+            }
+            let ball = {
+                name : 'ball',
+                price : 2000,
+            }
+            let golf = {
+                name : 'ball',
+                price : 2000,
+            }
+            basketball.price += 500
+            basketball['delivery-time'] = '3 days'
+            console.log(basketball)
+            function compareObj(product1, product2){
+                (product1.price == product2.price) ? (console.log(`${product1.name} equal ${product2.name}`)) : ((product1.price > product2.price)) ? (console.log(`${product1.name} more expensive than ${product2.name}`)) : (console.log(`${product1.name} less expensive than ${product2.name}`))
+            }
+            compareObj(basketball, ball)
+            function isSameProducts(product1, product2){
+                console.log((product1.name == product2.name && product1.price == product2.price))
+            }
+            isSameProducts(golf, ball)
+        </script>
+    </body>
+</html>
