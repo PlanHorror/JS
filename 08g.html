@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <p>Prime Calculator</p>
+        <button onclick="
+        {
+            updateCalculator(1)
+        }">
+            1
+        </button>
+        <button onclick="
+        {
+            updateCalculator(2)
+        }">
+            2
+        </button>
+        <button onclick="
+        {
+            updateCalculator(3)
+        }">
+            3
+        </button>
+        <button onclick="
+        {
+
+            updateCalculator(' + ')
+        }">
+            +
+        </button>
+        <p></p>
+        <button onclick="
+        {
+            updateCalculator(4)
+        }">
+            4
+        </button>
+        <button onclick="
+        {
+            updateCalculator(5)
+        }">
+            5
+        </button>
+        <button onclick="
+        {
+            updateCalculator(6)
+        }">
+            6
+        </button>
+        <button onclick="
+        {
+            updateCalculator(' - ')
+        }">
+            -
+        </button>
+        <p></p>
+        <button onclick="
+        {
+            updateCalculator(7)
+        }">
+            7
+        </button>
+        <button onclick="
+        {
+            updateCalculator(8)
+        }">
+            8
+        </button>
+        <button onclick="
+        {
+            updateCalculator(9)
+        }">
+            9
+        </button>
+        <button onclick="
+        {
+            updateCalculator(' * ')
+        }">
+            *
+        </button>
+        <p></p>
+        <button onclick="
+        {
+            updateCalculator(0)
+        }">
+            0
+        </button>
+        <button onclick="
+        {
+            updateCalculator('.')
+        }">
+            .
+        </button>
+        <button onclick = "
+        {
+            updateCalculator('=')
+        }">
+            =
+        </button>
+        <button onclick="
+        {
+            updateCalculator(' / ')
+        }">
+            /
+        </button>
+        <p></p>
+        <button onclick="
+        {
+            updateCalculator('Clear')
+        }">
+            Clear
+        </button>
+        <script>
+            let test_varible = localStorage.getItem('test_varible1');
+            if (test_varible === null){
+                test_varible = ''
+            }
+            function updateCalculator(uVar){
+                if (uVar != 'Clear' && uVar != '='){
+                    test_varible += uVar;
+                    console.log(test_varible);
+                }
+                else if (uVar == '='){
+                    test_varible = eval(test_varible); 
+                    console.log(test_varible);
+                }
+                else if (uVar == 'Clear'){
+                    test_varible = '';
+                    console.log(test_varible + 'Cleared');
+                }
+                localStorage.setItem('test_varible1', test_varible)
+            }
+        </script>
+    </body>
+</html>
