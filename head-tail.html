@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Head-Tail</title>
+    </head>
+    <body>
+        <button onclick="{
+            playGame('head')
+        }">
+            head
+        </button>
+        <button onclick="{
+            playGame('tail')
+        }">
+            tail
+        </button>
+        <button onclick="{
+            playGame('clear')
+        }">
+            Clear
+        </button>
+        <script>
+            let guess = ''
+            let computerGuess = ''
+            let answer = ''
+            let result = ''
+            let score = JSON.parse(localStorage.getItem('Score'));
+            (!score) && (score = {
+                Win : 0,
+                Lose : 0,
+                Tie : 0,
+            })
+            function playGame(guess){
+                if(guess == 'clear'){score = {
+                    Win : 0,
+                    Lose : 0,
+                    Tie : 0,
+                    };
+                    alert('Cleared score!')
+                    return;
+                };
+                (Math.random() >=0 && Math.random() < 0.5) ? (computerGuess = 'head') : (computerGuess = 'tail');
+                (Math.random() >=0 && Math.random() < 0.5) ? (answer = 'head') : (answer = 'tail');
+                (guess == answer) ? ((computerGuess == answer) ? (score.Tie += 1) : score.Win += 1 ) : ((computerGuess == answer) ? (score.Lose += 1) : (score.Tie += 1));
+                (guess == answer) ? ((computerGuess == answer) ? (result = 'Tie') : result = 'Win') : ((computerGuess == answer) ? (result = 'Lose') : (result = 'Tie'));
+                alert(`You choose ${guess}. Computer choose ${computerGuess}. You ${result}\nScore: Win ${score.Win}, Lose ${score.Lose}, Tie ${score.Tie}`);
+                localStorage.setItem('Score', JSON.stringify(score))
+            }
+        </script>
+    </body>
+</html>
