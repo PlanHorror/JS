@@ -12,6 +12,27 @@
                 document.querySelector('.Subscribe').innerHTML = 'Subscribe';
             }
         }">Subscribe</button>
-        <script></script>
+        <p>Amazon Shipping Canculator</p>
+        <p>Orders under $40 =+ $10 shipping</p>
+        <p>Orders over $40 = FREE shipping</p>
+        <input placeholder="Cost of order" class="inputCost" onkeydown="{
+            console.log(`You are clicking`)
+            if(event.key === 'Enter'){
+                Calculator()
+            }
+        }"><button onclick="{
+            Calculator()
+        }">Calculator</button>
+        <p class="Cost"></p>
+        <script>
+            function Calculator(){
+                let test = 't'*2
+                let inputCost = document.querySelector('.inputCost');
+                let inputbut = Number(inputCost.value)
+                console.log(typeof(inputbut));
+                (inputbut > 0 && inputbut < 40) ? (inputbut = 10 + inputbut) : ((inputbut >=40) ? (inputbut = inputbut + 0) : (inputbut = test));
+                document.querySelector('.Cost').innerHTML = `$${inputbut}`
+            }
+        </script>
     </body>
 </html>
