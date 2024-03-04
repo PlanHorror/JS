@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <button onclick="{
+            Quantity('show')
+        }">
+            Show quantity
+        </button>
+        <button onclick="{
+            Quantity(1)
+        }">
+            Add to Cart
+        </button>
+        <button onclick="{
+            Quantity(2)
+        }">
+            +2
+        </button>
+        <button onclick="{
+            Quantity(3)
+        }">
+            +3
+        </button>
+        <button onclick="{
+            Quantity(4)
+        }">
+            +4
+        </button>
+        <button onclick="{
+            Quantity(5)
+        }">
+            +5
+        </button>
+        <button onclick="{
+            Quantity(-1)
+        }">
+            Remove from Cart
+        </button>
+        <button onclick="{
+            Quantity(-2)
+        }">
+            -2
+        </button>
+        <button onclick="{
+            Quantity(-3)
+        }">
+            -3
+        </button>
+        <button onclick="{
+            Quantity(-quantity)
+        }">
+            Clear
+        </button>
+        <p class="Show"></p>
+        <script>
+            let quantity = Number(localStorage.getItem('quantity'))
+            document.querySelector('.Show').innerHTML = `Quantity: ${quantity}`
+            function Quantity(add){
+                if(((quantity + add) >= 0) && (quantity + add) <= 10){
+                    (quantity = quantity + add);
+                    document.querySelector('.Show').innerHTML = `Quantity: ${quantity}`
+                } else if(add == 'show'){
+                    console.log(`Quantity: ${quantity}`)
+                } else {
+                    document.querySelector('.Show').innerHTML = 'Quantity is invalid'
+                }
+                localStorage.setItem('quantity', quantity)
+            }
+        </script>
+    </body>
+</html>
