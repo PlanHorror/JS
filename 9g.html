@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <p>Amazon Shipping Canculator</p>
+        <p>Orders under $40 =+ $10 shipping</p>
+        <p>Orders over $40 = FREE shipping</p>
+        <input placeholder="Cost of order" class="inputCost" onkeydown="{
+            console.log(`You are clicking`)
+            if(event.key === 'Enter'){
+                Calculator()
+            }
+        }"><button onclick="{
+            Calculator()
+        }">Calculator</button>
+        <p class="Display"></p>
+        <input placeholder="Text" class="Click" onkeyup="{
+            keyUp()
+        }">
+        <p class="printText"></p>
+        <script>
+
+            function Calculator(){
+                let cost = Number(document.querySelector('.inputCost').value) * 100;
+                cost = cost/100;
+                (cost <= 40 && cost >= 1) ? (cost += 10) : ((cost > 40) ? (cost += 0) : (cost = 'a' * 4));
+                document.querySelector(".Display").innerHTML = `${cost}$`
+            }
+            function keyUp(){
+                let textin = document.querySelector(".Click").value
+                document.querySelector(".printText").innerHTML = textin
+            }
+
+        </script>
+    </body>
+</html>
